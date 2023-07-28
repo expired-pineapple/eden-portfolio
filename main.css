@@ -6,6 +6,11 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 		.image-container {
 			display: flex;
 			justify-content: center;
@@ -65,7 +70,16 @@
 			align-items: center;
 			margin-top: 50px;
 			border-top: 1px solid #484b90;
-			padding: 3rem 15rem 5rem 15rem;
+			padding: 3rem 3rem 3rem 3rem;
+		}
+		img{
+			width: 100%;
+			object-fit: cover;
+		}
+		.sm-img{
+			width: 30% !important;
+			object-fit: cover;
+			border-radius: 5px;
 		}
 
 		/* Style the image grid */
@@ -108,3 +122,83 @@
             padding: 20px 0;
             text-align: center;
         }
+
+/* responsiveness for phone image and text */
+.container {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+  }
+  
+  /* Add styles for screens smaller than 768px */
+  @media (max-width: 767px) {
+	.name {
+	  font-size: 28px;
+	}
+	.hr-span {
+	  font-size: 16px;
+	}
+	.info-item {
+	  display: inline-block;
+	  margin-right: 10px;
+	}
+	.info-item span {
+	  display: none;
+	}
+	.info-item i {
+	  margin-right: 5px;
+	}
+	.image-grid {
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: center;
+	  align-items: center;
+	}
+	.image-grid img {
+	  width: 100%;
+	  height: auto;
+	}
+	.grid-title {
+	  margin-top: 20px;
+	}
+  }
+  
+  /* Add styles for screens smaller than 576px */
+  @media (max-width: 575px) {
+	.name{
+	  font-size: 14px;
+	}
+	.hr-span {
+	  font-size: 5px;
+	}
+	.info-span{
+	  font-size: 10px;
+	}
+	.info-item {
+	  margin-right: 5px;
+	}
+	.grid-title {
+		margin-top: 10px;
+	  }
+  }
+
+  @media screen and (max-width: 499px) {
+	img{
+		width: 80px;
+	}
+	.grid-title{
+		font-size: 15px;
+		font-weight: 700;
+	}
+	.name{
+		font-size: 10px;
+	}
+	.bordered-container{
+		padding: 3rem 5rem 5rem 5rem;
+	}
+
+	.info-item .in{
+		font-size: 50px;
+		color: #484b90;
+	}
+  }
